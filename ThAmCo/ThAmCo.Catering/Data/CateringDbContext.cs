@@ -49,8 +49,34 @@ namespace ThAmCo.Catering.Data
 
 
 
-            // Setting up relationships between the tables //
+            // Adding seed data to the tables //
 
+            if (_hostEnv != null && _hostEnv.IsDevelopment())
+            {
+                builder.Entity<FoodItem>()
+                    .HasData(
+                    new FoodItem { FoodItemId = 1, Description = "Fish", UnitPrice = 3.50f },
+                    new FoodItem { FoodItemId = 2, Description = "Chips", UnitPrice = 1.20f }
+                    );
+
+                builder.Entity<Menu>()
+                    .HasData(
+                    new Menu { MenuId = 1, MenuName = "Dinner"},
+                    new Menu { MenuId = 2, MenuName = "Lunch"}
+                    );
+
+                builder.Entity<MenuFoodItem>()
+                    .HasData(
+                    new MenuFoodItem { MenuId = 1, FoodItemId = 1 },
+                    new MenuFoodItem { MenuId = 2, FoodItemId = 2 }
+                    );
+
+                builder.Entity<FoodBooking>()
+                    .HasData(
+                    new FoodBooking { ClientReferenceId = 1, FoodBookingId = 1, MenuId = 1, NumberOfGuests = 1 },
+                    new FoodBooking { ClientReferenceId = 2, FoodBookingId = 2, MenuId = 2, NumberOfGuests = 2 }
+                    );
+            }
 
 
 
