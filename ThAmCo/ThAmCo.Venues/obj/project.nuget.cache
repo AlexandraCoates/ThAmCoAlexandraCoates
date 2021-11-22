@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ed6dOiKT2uUabzWs9c2j0+6Kdz1d7Rio175DvLC5l1qLIS8X8aqUbCNIeXig70ChmhBksrBXSgZdoSRtpLE2Q==",
+  "dgSpecHash": "VQLEQnygQjXg6nbERn1OO+phsZ0RHEO5DVmml92x+FZeqZ9iyodg2ErxOpUQACSE33bn4Mx+cPMB0YK05MK/Zg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Desktop\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Documents\\GitHub\\ThAmCoYr2\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

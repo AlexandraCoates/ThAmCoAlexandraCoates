@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\Desktop\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj": {}
+    "C:\\Users\\alexa\\Documents\\GitHub\\ThAmCoYr2\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\Desktop\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj": {
+    "C:\\Users\\alexa\\Documents\\GitHub\\ThAmCoYr2\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Desktop\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Documents\\GitHub\\ThAmCoYr2\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj",
         "projectName": "ThAmCo.Events",
-        "projectPath": "C:\\Users\\alexa\\Desktop\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj",
+        "projectPath": "C:\\Users\\alexa\\Documents\\GitHub\\ThAmCoYr2\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Desktop\\ThAmCo\\ThAmCo.Events\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Documents\\GitHub\\ThAmCoYr2\\ThAmCo\\ThAmCo.Events\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
