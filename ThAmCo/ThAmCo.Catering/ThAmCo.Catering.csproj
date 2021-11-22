@@ -4,5 +4,59 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20211122174802_test.cs" />
+    <Compile Remove="Migrations\20211122174802_test.Designer.cs" />
+    <Compile Remove="Migrations\20211122180703_MenuFoodItemTest.cs" />
+    <Compile Remove="Migrations\20211122180703_MenuFoodItemTest.Designer.cs" />
+    <Compile Remove="Migrations\20211122181357_FoodItemTest.cs" />
+    <Compile Remove="Migrations\20211122181357_FoodItemTest.Designer.cs" />
+    <Compile Remove="Migrations\20211122181450_FoodItemTest2.cs" />
+    <Compile Remove="Migrations\20211122181450_FoodItemTest2.Designer.cs" />
+    <Compile Remove="Migrations\20211122182029_FoodItemTest3.cs" />
+    <Compile Remove="Migrations\20211122182029_FoodItemTest3.Designer.cs" />
+    <Compile Remove="Migrations\20211122182125_FoodItemTest4.cs" />
+    <Compile Remove="Migrations\20211122182125_FoodItemTest4.Designer.cs" />
+    <Compile Remove="Migrations\20211122182157_FoodItemTest5.cs" />
+    <Compile Remove="Migrations\20211122182157_FoodItemTest5.Designer.cs" />
+    <Compile Remove="Migrations\20211122182709_test2.cs" />
+    <Compile Remove="Migrations\20211122182709_test2.Designer.cs" />
+    <Compile Remove="Migrations\20211122182837_test3.cs" />
+    <Compile Remove="Migrations\20211122182837_test3.Designer.cs" />
+    <Compile Remove="Migrations\20211122182914_test2.cs" />
+    <Compile Remove="Migrations\20211122182914_test2.Designer.cs" />
+    <Compile Remove="Migrations\20211122183053_test3.cs" />
+    <Compile Remove="Migrations\20211122183053_test3.Designer.cs" />
+    <Compile Remove="Migrations\20211122183131_test2.cs" />
+    <Compile Remove="Migrations\20211122183131_test2.Designer.cs" />
+    <Compile Remove="Migrations\20211122183245_initialcreate.cs" />
+    <Compile Remove="Migrations\20211122183245_initialcreate.Designer.cs" />
+    <Compile Remove="Migrations\20211122183754_initialcreate.cs" />
+    <Compile Remove="Migrations\20211122183754_initialcreate.Designer.cs" />
+    <Compile Remove="Migrations\20211122183854_initialcreate.cs" />
+    <Compile Remove="Migrations\20211122183854_initialcreate.Designer.cs" />
+    <Compile Remove="Migrations\20211122184023_initialcreate.cs" />
+    <Compile Remove="Migrations\20211122184023_initialcreate.Designer.cs" />
+    <Compile Remove="Migrations\20211122184641_initialcreate.cs" />
+    <Compile Remove="Migrations\20211122184641_initialcreate.Designer.cs" />
+    <Compile Remove="Migrations\20211122184821_initialcreate.cs" />
+    <Compile Remove="Migrations\20211122184821_initialcreate.Designer.cs" />
+    <Compile Remove="Migrations\20211122185022_initialcreate.cs" />
+    <Compile Remove="Migrations\20211122185022_initialcreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.19">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.19">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
 
 </Project>
