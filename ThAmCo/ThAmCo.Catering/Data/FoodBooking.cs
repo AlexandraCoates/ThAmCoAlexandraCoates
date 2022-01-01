@@ -11,7 +11,7 @@ namespace ThAmCo.Catering.Data
     {
         public int FoodBookingId { get; set; }
 
-        public  int ClientReferenceId { get; set; } // WONT WORK //
+        public  int ClientReferenceId { get; set; } // WONT WORK - MIGHT HAVE TO CHANGE TO CUSTOMER //
 
         
         public int NumberOfGuests { get; set; }
