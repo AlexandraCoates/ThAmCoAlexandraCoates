@@ -199,7 +199,6 @@ C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreap
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreapp3.1\staticwebassets\ThAmCo.Catering.StaticWebAssets.xml
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreapp3.1\scopedcss\bundle\ThAmCo.Catering.styles.css
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreapp3.1\ThAmCo.Catering.RazorTargetAssemblyInfo.cache
-C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreapp3.1\ThAmCo.Catering.csproj.CopyComplete
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreapp3.1\ThAmCo.Catering.dll
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreapp3.1\ThAmCo.Catering.pdb
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Catering\obj\Debug\netcoreapp3.1\ThAmCo.Catering.genruntimeconfig.cache
