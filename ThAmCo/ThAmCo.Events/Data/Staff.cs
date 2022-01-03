@@ -24,6 +24,8 @@ namespace ThAmCo.Events.Data
 
         public int Phone { get; set; }
 
+        public bool FirstAider { get; set; }
+
         // NO FK //
 
     }

@@ -23,13 +23,13 @@ namespace ThAmCo.Events.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Staffing>>> GetStaffing()
         {
-            return await _context.Staffing.ToListAsync();
+            return await _context.Staffings.ToListAsync();
         }
 
         [HttpGet("{StaffingId}")]
         public async Task<ActionResult<Staffing>> GetStaffing(int StaffingId)
         {
-            var Staffing = await _context.Staffing.FindAsync(StaffingId);
+            var Staffing = await _context.Staffings.FindAsync(StaffingId);
             if (Staffing == null)
             {
                 return NotFound();
@@ -67,7 +67,7 @@ namespace ThAmCo.Events.Controllers
         [HttpPost]
         public async Task<ActionResult<Staffing>> PostStaffing(Staffing staffing)
         {
-            _context.FoodBookings.Add(staffing);
+            _context.Staffings.Add(staffing);
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetStaffing", new { Staffing = staffing.StaffingId }, staffing);
         }
@@ -75,13 +75,13 @@ namespace ThAmCo.Events.Controllers
         [HttpDelete("{StaffingId}")]
         public async Task<ActionResult<Staffing>> DeleteStaffing(int StaffingId)
         {
-            var staffing = await _context.Staffing.FindAsync(StaffingId);
+            var staffing = await _context.Staffings.FindAsync(StaffingId);
             if (staffing == null)
             {
                 return NotFound();
             }
 
-            _context.Staffing.Remove(staffing);
+            _context.Staffings.Remove(staffing);
             await _context.SaveChangesAsync();
 
             return staffing;
@@ -89,7 +89,7 @@ namespace ThAmCo.Events.Controllers
 
         private bool StaffingExists(int id)
         {
-            return _context.Staffing.Any(e => e.StaffingId == id);
+            return _context.Staffings.Any(e => e.StaffingId == id);
         }
 
     }

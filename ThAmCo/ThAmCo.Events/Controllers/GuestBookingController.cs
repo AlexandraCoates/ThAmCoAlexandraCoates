@@ -13,9 +13,9 @@ namespace ThAmCo.Events.Controllers
     [ApiController]
     public class GuestBookingController : Controller
     {
-        private readonly GuestBookingDbContext _context;
+        private readonly EventsDbContext _context;
 
-        public GuestBookingController(GuestBookingDbContext dbContext)
+        public GuestBookingController(EventsDbContext dbContext)
         {
             _context = dbContext;
         }
@@ -29,7 +29,7 @@ namespace ThAmCo.Events.Controllers
         [HttpGet("{GuestBookingId}")]
         public async Task<ActionResult<GuestBooking>> GetGuestBookings(int GuestBookingId)
         {
-            var GuestBookings = await _context.GuestBooking.FindAsync(GuestBookingId);
+            var GuestBookings = await _context.GuestBookings.FindAsync(GuestBookingId);
             if (GuestBookings == null)
             {
                 return NotFound();
@@ -75,13 +75,13 @@ namespace ThAmCo.Events.Controllers
         [HttpDelete("{GuestBookingId}")]
         public async Task<ActionResult<GuestBooking>> DeleteGuestBooking(int GuestBookingId)
         {
-            var guestBooking = await _context.GuestBooking.FindAsync(GuestBookingId);
+            var guestBooking = await _context.GuestBookings.FindAsync(GuestBookingId);
             if (guestBooking == null)
             {
                 return NotFound();
             }
 
-            _context.GuestBooking.Remove(guestBooking);
+            _context.GuestBookings.Remove(guestBooking);
             await _context.SaveChangesAsync();
 
             return guestBooking;

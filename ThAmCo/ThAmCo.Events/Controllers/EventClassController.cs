@@ -23,11 +23,11 @@ namespace ThAmCo.Events.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EventClass>>> GetEvents()
         {
-            return await _context.EventClass.ToListAsync();
+            return await _context.Events.ToListAsync();
         }
 
         [HttpGet("{EventId}")]
-        public async Task<ActionResult<Customer>> GetEvents(int EventId)
+        public async Task<ActionResult<EventClass>> GetEvents(int EventId)
         {
             var Events = await _context.Events.FindAsync(EventId);
             if (Events == null)
@@ -67,7 +67,7 @@ namespace ThAmCo.Events.Controllers
         [HttpPost]
         public async Task<ActionResult<EventClass>> PostEvents(EventClass eventClass)
         {
-            _context.EventClass.Add(eventClass);
+            _context.Events.Add(eventClass);
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetEvents", new { EventClass = eventClass.EventId }, eventClass);
         }
@@ -75,13 +75,13 @@ namespace ThAmCo.Events.Controllers
         [HttpDelete("{EventId}")]
         public async Task<ActionResult<EventClass>> DeleteEvent(int EventId)
         {
-            var eventClass = await _context.EventClass.FindAsync(EventId);
+            var eventClass = await _context.Events.FindAsync(EventId);
             if (eventClass == null)
             {
                 return NotFound();
             }
 
-            _context.EventClass.Remove(eventClass);
+            _context.Events.Remove(eventClass);
             await _context.SaveChangesAsync();
 
             return eventClass;
@@ -89,7 +89,7 @@ namespace ThAmCo.Events.Controllers
 
         private bool EventExists(int id)
         {
-            return _context.EventClass.Any(e => e.EventId == id);
+            return _context.Events.Any(e => e.EventId == id);
         }
 
     }

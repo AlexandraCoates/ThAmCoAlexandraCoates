@@ -23,13 +23,13 @@ namespace ThAmCo.Events.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Staff>>> GetStaff()
         {
-            return await _context.Staff.ToListAsync();
+            return await _context.Staffs.ToListAsync();
         }
 
         [HttpGet("{StaffId}")]
         public async Task<ActionResult<Staff>> GetStaff(int StaffId)
         {
-            var Staff = await _context.Staff.FindAsync(StaffId);
+            var Staff = await _context.Staffs.FindAsync(StaffId);
             if (Staff == null)
             {
                 return NotFound();
@@ -67,7 +67,7 @@ namespace ThAmCo.Events.Controllers
         [HttpPost]
         public async Task<ActionResult<Staff>> PostStaff(Staff staff)
         {
-            _context.FoodBookings.Add(staff);
+            _context.Staffs.Add(staff);
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetStaff", new { Staff = staff.StaffId }, staff);
         }
@@ -75,13 +75,13 @@ namespace ThAmCo.Events.Controllers
         [HttpDelete("{StaffId}")]
         public async Task<ActionResult<Staff>> DeleteStaff(int StaffId)
         {
-            var staff = await _context.Staff.FindAsync(StaffId);
+            var staff = await _context.Staffs.FindAsync(StaffId);
             if (staff == null)
             {
                 return NotFound();
             }
 
-            _context.Customers.Remove(staff);
+            _context.Staffs.Remove(staff);
             await _context.SaveChangesAsync();
 
             return staff;
@@ -89,7 +89,7 @@ namespace ThAmCo.Events.Controllers
 
         private bool StaffExists(int id)
         {
-            return _context.Staff.Any(e => e.StaffId == id);
+            return _context.Staffs.Any(e => e.StaffId == id);
         }
 
     }

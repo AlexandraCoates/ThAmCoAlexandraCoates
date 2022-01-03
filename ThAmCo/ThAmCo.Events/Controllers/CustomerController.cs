@@ -67,7 +67,7 @@ namespace ThAmCo.Events.Controllers
         [HttpPost]
         public async Task<ActionResult<Customer>> PostFoodBookings(Customer customer)
         {
-            _context.FoodBookings.Add(customer);
+            _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetCustomer", new { Customer = customer.CustomerId }, customer);
         }

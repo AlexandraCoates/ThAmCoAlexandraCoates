@@ -22,7 +22,9 @@ namespace ThAmCo.Events.Data
 
         public String Email { get; set; }
 
-        public int Phone { get; set;  }
+        public int Phone { get; set; }
+
+        public bool Attendance { get; set; }
 
         // DOES NOT HAVE A FK // 
     }
