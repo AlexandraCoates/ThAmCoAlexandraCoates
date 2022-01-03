@@ -12,7 +12,7 @@ namespace ThAmCo.Events.Data
 
         public int EventId { get; set; }
 
-        //public Venues.EventType eventType EVENT TYPE ID IS NOT AN INT //
+        public string EventType { get; set; }
 
     }
 }

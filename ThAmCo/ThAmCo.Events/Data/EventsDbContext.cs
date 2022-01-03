@@ -19,6 +19,11 @@ namespace ThAmCo.Events.Data
 
         private readonly IHostEnvironment _hostEnv;
 
+        public EventsDbContext()
+        {
+
+        }
+
         public EventsDbContext(DbContextOptions<EventsDbContext> options,
                       IHostEnvironment env) : base(options)
         {

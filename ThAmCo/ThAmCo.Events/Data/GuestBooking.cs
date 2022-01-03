@@ -16,6 +16,11 @@ namespace ThAmCo.Events.Data
 
         public int CustomerId { get; set; }
 
+        [ForeignKey(nameof(EventId))]
+        public int EventId { get; set; }
+
         public Customer customer { get; set; }
+
+        public EventClass eventClass { get; set; }
     }
 }
