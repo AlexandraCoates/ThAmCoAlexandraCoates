@@ -57,7 +57,40 @@ namespace ThAmCo.Events.Data
             builder.Entity<Staffing>()
                 .HasKey(s => new { s.StaffingId });
 
+            // Adding seed data to the tables //
 
+            if (_hostEnv != null && _hostEnv.IsDevelopment())
+            {
+                builder.Entity<Customer>()
+                    .HasData(
+                    new Customer { CustomerId = 1, NameFirst = "Alex", NameLast = "Coates", Phone = 07519, Email = "alexandra@email.com", Address = "22 Upton Street", PostCode = "TS13NE"},
+                    new Customer { CustomerId = 2, NameFirst = "David", NameLast = "Hodson", Phone = 08765, Email = "David@email.com", Address = "21 Some Street", PostCode = "TS52NE" }
+                    );
+
+                builder.Entity<EventClass>()
+                    .HasData(
+                    new EventClass { EventId = 1, EventType = "WED" },
+                    new EventClass { EventId = 2, EventType = "MET"}
+                    );
+
+                builder.Entity<GuestBooking>()
+                    .HasData(
+                    new GuestBooking { GuestBookingId = 1, CustomerId = 1, EventId = 1 },
+                    new GuestBooking { GuestBookingId = 2, CustomerId = 2, EventId = 2 }
+                    );
+
+                builder.Entity<Staff>()
+                    .HasData(
+                    new Staff { StaffId = 1, NameFirst = "Person", NameLast = "One", Phone = 00000, Address = "An Address", PostCode = "YO8", Email = "personOne@gmail.com", FirstAider = false },
+                    new Staff { StaffId = 2, NameFirst = "Human", NameLast = "Two", Phone = 011111, Address = "A Place", PostCode = "LS1", Email = "Human@gmail.com", FirstAider = true }
+                    );
+
+                builder.Entity<Staffing>()
+                    .HasData(
+                    new Staffing { StaffingId = 1, EventId = 1, StaffId = 1 },
+                    new Staffing { StaffingId = 2, EventId = 2, StaffId = 2 }
+                    );
+            }
 
 
         }

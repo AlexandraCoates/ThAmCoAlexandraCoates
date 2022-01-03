@@ -20,7 +20,7 @@ namespace ThAmCo.Events.Data
 
         public Staff staff { get; set; }
 
-        public EventClass eventClass { get; set; } // Does not exist yet // 
+        public EventClass eventClass { get; set; }  
 
     }
 }

@@ -20,6 +20,11 @@ namespace ThAmCo.Events.Controllers
             _context = dbContext;
         }
 
+        public async Task<IActionResult> Index()
+        {
+            return View();
+        }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {

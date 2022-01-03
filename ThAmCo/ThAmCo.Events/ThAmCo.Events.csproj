@@ -22,4 +22,11 @@
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Events\" />
+    <Folder Include="Views\GuestBooking\" />
+    <Folder Include="Views\Staffing\" />
+    <Folder Include="Views\Staff\" />
+  </ItemGroup>
+
 </Project>
