@@ -227,3 +227,14 @@ C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\bin\Debug\netcoreapp3
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Details.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Create.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\Staff\Index.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\Staff\Details.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\Staff\Create.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\EventClass\Create.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\EventClass\Details.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\EventClass\Index.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\GuestBooking\Index.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\GuestBooking\Details.cshtml.g.cs
+C:\Users\alexa\Source\Repos\ThAmCoYr2\ThAmCo\ThAmCo.Events\obj\Debug\netcoreapp3.1\Razor\Views\GuestBooking\Create.cshtml.g.cs

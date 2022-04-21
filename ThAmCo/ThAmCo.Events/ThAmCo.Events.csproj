@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -23,10 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Events\" />
-    <Folder Include="Views\GuestBooking\" />
     <Folder Include="Views\Staffing\" />
-    <Folder Include="Views\Staff\" />
   </ItemGroup>
 
 </Project>

@@ -9,8 +9,6 @@ using ThAmCo.Events.Data;
 
 namespace ThAmCo.Events.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class StaffController : Controller
     {
         private readonly EventsDbContext _context;
@@ -20,77 +18,40 @@ namespace ThAmCo.Events.Controllers
             _context = dbContext;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Staff>>> GetStaff()
+        //Gets a list of existing Staff
+        public async Task<ActionResult<IEnumerable<Staff>>> Index()
         {
-            return await _context.Staffs.ToListAsync();
+            return View(await _context.Staffs.ToListAsync());
         }
 
-        [HttpGet("{StaffId}")]
-        public async Task<ActionResult<Staff>> GetStaff(int StaffId)
+        //Gets a specific staff member
+        public async Task<ActionResult<Staff>> Details(int? id)
         {
-            var Staff = await _context.Staffs.FindAsync(StaffId);
-            if (Staff == null)
+            var Staffs = await _context.Staffs.FirstOrDefaultAsync(s => s.StaffId == id);
+            if (Staffs == null)
             {
                 return NotFound();
             }
-            return Staff;
+            return View(Staffs);
         }
 
-        [HttpPut("{StaffId}")]
-        public async Task<IActionResult> PutStaff(int StaffId, Staff staff)
+        public IActionResult Create()
         {
-            if (StaffId != staff.StaffId)
-            {
-                return BadRequest();
-            }
-            _context.Entry(staff).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StaffExists(StaffId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return NoContent();
+            return View();
         }
 
+        //Create a new staff member
         [HttpPost]
-        public async Task<ActionResult<Staff>> PostStaff(Staff staff)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("NameFirst, NameLast, Address, PostCode, Email, Phone, FirstAider")] Staff staff)
         {
-            _context.Staffs.Add(staff);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction("GetStaff", new { Staff = staff.StaffId }, staff);
-        }
-
-        [HttpDelete("{StaffId}")]
-        public async Task<ActionResult<Staff>> DeleteStaff(int StaffId)
-        {
-            var staff = await _context.Staffs.FindAsync(StaffId);
-            if (staff == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                _context.Add(staff);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-
-            _context.Staffs.Remove(staff);
-            await _context.SaveChangesAsync();
-
-            return staff;
+            return RedirectToAction(nameof(Index));
         }
-
-        private bool StaffExists(int id)
-        {
-            return _context.Staffs.Any(e => e.StaffId == id);
-        }
-
     }
 }

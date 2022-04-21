@@ -10,6 +10,7 @@ namespace ThAmCo.Events.Data
     public class Customer
     {
 
+        [Required]
         public int CustomerId { get; set; } // PK // 
 
         public String NameFirst { get; set; }
@@ -24,7 +25,7 @@ namespace ThAmCo.Events.Data
 
         public int Phone { get; set; }
 
-        public bool Attendance { get; set; }
+        public bool Attendance { get; set; } = false;
 
         // DOES NOT HAVE A FK // 
     }

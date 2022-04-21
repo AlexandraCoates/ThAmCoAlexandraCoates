@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ThAmCo.Events.Data.GuestBooking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.customer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.customer.CustomerId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GuestBookingId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GuestBookingId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GuestBookingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

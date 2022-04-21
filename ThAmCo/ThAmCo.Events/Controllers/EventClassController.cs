@@ -9,8 +9,7 @@ using ThAmCo.Events.Data;
 
 namespace ThAmCo.Events.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+
     public class EventClassController : Controller
     {
         private readonly EventsDbContext _context;
@@ -20,77 +19,113 @@ namespace ThAmCo.Events.Controllers
             _context = dbContext;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<EventClass>>> GetEvents()
+        //Gets a list of existing events
+        public async Task<ActionResult<IEnumerable<EventClass>>> Index()
         {
-            return await _context.Events.ToListAsync();
+            return View(await _context.Events.ToListAsync());
         }
 
-        [HttpGet("{EventId}")]
-        public async Task<ActionResult<EventClass>> GetEvents(int EventId)
+        //Gets a specific event
+        public async Task<ActionResult<EventClass>>Details(int? id)
         {
-            var Events = await _context.Events.FindAsync(EventId);
+            var Events = await _context.Events.FirstOrDefaultAsync(e => e.EventId == id);
             if (Events == null)
             {
                 return NotFound();
             }
-            return Events;
+            return View(Events);
         }
 
-        [HttpPut("{EventId}")]
-        public async Task<IActionResult> PutEvents(int EventId, EventClass eventClass)
+        public IActionResult  Create()
         {
-            if (EventId != eventClass.EventId)
-            {
-                return BadRequest();
-            }
-            _context.Entry(eventClass).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EventExists(EventId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-            return NoContent();
+            return View();
         }
 
+        //Create a new event
         [HttpPost]
-        public async Task<ActionResult<EventClass>> PostEvents(EventClass eventClass)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create ([Bind("EventType")]EventClass eventClass)
         {
-            _context.Events.Add(eventClass);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction("GetEvents", new { EventClass = eventClass.EventId }, eventClass);
-        }
-
-        [HttpDelete("{EventId}")]
-        public async Task<ActionResult<EventClass>> DeleteEvent(int EventId)
-        {
-            var eventClass = await _context.Events.FindAsync(EventId);
-            if (eventClass == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                _context.Add(eventClass);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-
-            _context.Events.Remove(eventClass);
-            await _context.SaveChangesAsync();
-
-            return eventClass;
+            return RedirectToAction(nameof(Index));
         }
 
-        private bool EventExists(int id)
-        {
-            return _context.Events.Any(e => e.EventId == id);
-        }
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<EventClass>>> GetEvents()
+        //{
+        //    return await _context.Events.ToListAsync();
+        //}
+
+        //[HttpGet("{EventId}")]
+        //public async Task<ActionResult<EventClass>> GetEvents(int EventId)
+        //{
+        //    var Events = await _context.Events.FindAsync(EventId);
+        //    if (Events == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    return Events;
+        //}
+
+        //[HttpPut("{EventId}")]
+        //public async Task<IActionResult> PutEvents(int EventId, EventClass eventClass)
+        //{
+        //    if (EventId != eventClass.EventId)
+        //    {
+        //        return BadRequest();
+        //    }
+        //    _context.Entry(eventClass).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!EventExists(EventId))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+        //    return NoContent();
+        //}
+
+        //[HttpPost]
+        //public async Task<ActionResult<EventClass>> PostEvents(EventClass eventClass)
+        //{
+        //    _context.Events.Add(eventClass);
+        //    await _context.SaveChangesAsync();
+        //    return CreatedAtAction("GetEvents", new { EventClass = eventClass.EventId }, eventClass);
+        //}
+
+        //[HttpDelete("{EventId}")]
+        //public async Task<ActionResult<EventClass>> DeleteEvent(int EventId)
+        //{
+        //    var eventClass = await _context.Events.FindAsync(EventId);
+        //    if (eventClass == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    _context.Events.Remove(eventClass);
+        //    await _context.SaveChangesAsync();
+
+        //    return eventClass;
+        //}
+
+        //private bool EventExists(int id)
+        //{
+        //    return _context.Events.Any(e => e.EventId == id);
+        //}
 
     }
 }
