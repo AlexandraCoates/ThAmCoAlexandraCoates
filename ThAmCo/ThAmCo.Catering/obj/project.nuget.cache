@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7/ZDW2oaYgK2iAJfz2BrnfheQps481nUNx6ox/NIkEY1jT716qZMs7zxaC/O2MpYM/fgUZEKZQ6u6/WN6qRuwQ==",
+  "dgSpecHash": "hs4cgzyjoT76okiqYsupLWPfDIKI0d411E9WtppZ7K5GXR4fP3UEnip6lE466fv3KEIe4Ou3WD9O9pTAiZ+X8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\bootstrap\\4.0.0\\bootstrap.4.0.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",

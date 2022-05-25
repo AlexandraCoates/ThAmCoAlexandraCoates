@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DdLl0bIgoxMmvd7Tj3m4mwD2A7CLiDcWsZN4QLDCiHIks3RInn53b+CySJn+ab+MtTqQL8Ew1EOWry21lnXhnQ==",
+  "dgSpecHash": "PomCA7jwQC6x91ruluabljlxUt119cAHeoYZuxvCly6jU2s1xgno+RiPCCsRAt4c1cNdSOIFSGhFHiGBJXWvOA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\bootstrap\\4.0.0\\bootstrap.4.0.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",

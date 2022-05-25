@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj": {}
+    "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj": {
+    "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj",
         "projectName": "ThAmCo.Catering",
-        "projectPath": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj",
+        "projectPath": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Catering\\ThAmCo.Catering.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Catering\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Catering\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",

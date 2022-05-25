@@ -11,21 +11,34 @@ namespace ThAmCo.Events.Data
     {
 
         [Required]
+        [Display(Name = "Customer Id")]
         public int CustomerId { get; set; } // PK // 
 
+
+        [Display(Name = "First Name")]
         public String NameFirst { get; set; }
 
+
+        [Display(Name = "Last Name")]
         public String NameLast { get; set; }
 
+
+        [Display(Name = "Address")]
         public String Address { get; set; }
 
+
+        [Display(Name = "Postcode")]
         public String PostCode { get; set; }
 
+
+        [Display(Name = "Email")]
         public String Email { get; set; }
 
+
+        [Display(Name = "Phone Number")]
         public int Phone { get; set; }
 
-        public bool Attendance { get; set; } = false;
+        public IEnumerable<GuestBooking> Bookings { get; set; }
 
         // DOES NOT HAVE A FK // 
     }

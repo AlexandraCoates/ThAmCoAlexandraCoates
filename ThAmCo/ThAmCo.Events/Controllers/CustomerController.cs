@@ -35,6 +35,15 @@ namespace ThAmCo.Events.Controllers
             {
                 return NotFound();
             }
+
+            var Events = await _context.GuestBookings
+                .Where(g => g.CustomerId == id)
+                .Include(g => g.eventClass)
+                .ToListAsync();
+            if(Events != null)
+            {
+                Customers.Bookings = Events;
+            }
             return View(Customers);
         }
 
@@ -60,33 +69,86 @@ namespace ThAmCo.Events.Controllers
 
         }
 
-        //[HttpPost]
-        //public async Task<ActionResult<Customer>> PostFoodBookings(Customer customer)
-        //{
-        //    _context.Customers.Add(customer);
-        //    await _context.SaveChangesAsync();
-        //    return CreatedAtAction("GetCustomer", new { Customer = customer.CustomerId }, customer);
-        //}
+        // Creates the edit view for a specific customer
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //[HttpDelete("{CustomerId}")]
-        //public async Task<ActionResult<Customer>> DeleteCustomer(int CustomerId)
-        //{
-        //    var customer = await _context.Customers.FindAsync(CustomerId);
-        //    if (customer == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var customer = await _context.Customers.FindAsync(id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            return View(customer);
+        }
 
-        //    _context.Customers.Remove(customer);
-        //    await _context.SaveChangesAsync();
+        // Edits a specific customer
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("CustomerId,NameFirst,NameLast,Address,PostCode,Email,Phone,Attendance")] Customer customer)
+        {
+            if (id != customer.CustomerId)
+            {
+                return NotFound();
+            }
 
-        //    return customer;
-        //}
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(customer);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if(!CustomerExists(customer.CustomerId))
+                    {
+                        return NotFound();
+                    }
+                    else 
+                    {
+                        throw;
+                    }
+                }
+            }
+            return View(customer);
+        }
 
-        //private bool CustomerExists(int id)
-        //{
-        //    return _context.Customers.Any(e => e.CustomerId == id);
-        //}
+        // Creates the delete view for a specific customer
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
 
+            var customer = await _context.Customers.FirstOrDefaultAsync(c => c.CustomerId == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return View(customer);
+        }
+
+        // Deletes a specific customer
+        // TODO: Soft Delete
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var customer = await _context.Customers.FindAsync(id);
+            _context.Customers.Remove(customer);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool CustomerExists(int id)
+        {
+            return _context.Customers.Any(e => e.CustomerId == id);
+        }
     }
 }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "f/puW0fGTPizkd+/iKRN3hziOIlt/v0HWPRjJyzWqwNfN062/kWrtDtjbU8/uLR/243KoZo7p8EjqmdHjKxwzQ==",
+  "dgSpecHash": "B0QnsFip/3cUjCbWeXOn1XgLG0eQYXU4KAko4eQRMQkd2AVRZzcaLD2PnMyx5e6bqVZHevqWL8s11w+g/1t5Eg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj",
+  "projectFilePath": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Events\\ThAmCo.Events.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexa\\.nuget\\packages\\bootstrap\\4.0.0\\bootstrap.4.0.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\jquery\\3.0.0\\jquery.3.0.0.nupkg.sha512",
+    "C:\\Users\\alexa\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.8\\microsoft.aspnet.webapi.client.5.2.8.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
@@ -58,6 +59,7 @@
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\alexa\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\popper.js\\1.12.9\\popper.js.1.12.9.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

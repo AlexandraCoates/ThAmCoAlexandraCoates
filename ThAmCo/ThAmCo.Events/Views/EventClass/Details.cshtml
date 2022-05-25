@@ -2,21 +2,119 @@
 
 @{
     ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Details</h1>
 
 <div>
-    <h4>EventClass</h4>
+    <h4>@Html.DisplayFor(model => model.EventTitle)</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.EventType)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EventType)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
     </dl>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().GuestBookingId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().Customer.NameFirst)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().Customer.NameLast)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bookings.FirstOrDefault().attended)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Bookings)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GuestBookingId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.NameFirst)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.NameLast)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.attended)
+                    </td>
+                    <td>
+                        <a asp-controller="GuestBooking" asp-action="Delete" asp-route-id="@item.GuestBookingId">Cancel</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    Guest Count: @ViewBag.GuestCount
+    <br />
+    <h4></h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staffing.FirstOrDefault().StaffId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staffing.FirstOrDefault().staff.NameFirst)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Staffing.FirstOrDefault().staff.FirstAider)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ Boolean firstAider = false;
+                string message = "";}
+            @foreach (var item in Model.Staffing)
+            {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StaffId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.staff.NameFirst)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.staff.FirstAider)
+                </td>
+                <td>
+                    <a asp-controller="Staffing" asp-action="Delete" asp-route-id="@item.StaffingId">Cancel</a>
+                </td>
+                @{ if (item.staff.FirstAider) { firstAider = true; } }
+            </tr>
+            }
+            @{
+                if (firstAider == false)
+                {
+                    message = "There are no first aiders assigned to this event";
+                }
+            }
+        </tbody>
+
+        <b>@message</b>
+</table>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.EventId">Edit</a> |

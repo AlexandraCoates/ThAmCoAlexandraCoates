@@ -10,17 +10,23 @@ namespace ThAmCo.Events.Data
     public class GuestBooking
     {
 
+        [Display(Name = "Booking Id")]
         public int GuestBookingId { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
-
+        [Display(Name = "Customer Id")]
         public int CustomerId { get; set; }
 
         [ForeignKey(nameof(EventId))]
+        [Display(Name = "Event Id")]
         public int EventId { get; set; }
 
-        public Customer customer { get; set; }
+        public Customer Customer { get; set; }
 
         public EventClass eventClass { get; set; }
+
+
+        [Display(Name = "Attendence")]
+        public Boolean attended { get; set; } = false;
     }
 }

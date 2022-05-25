@@ -30,9 +30,6 @@ namespace ThAmCo.Events.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("Attendance")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -57,7 +54,6 @@ namespace ThAmCo.Events.Migrations
                         {
                             CustomerId = 1,
                             Address = "22 Upton Street",
-                            Attendance = false,
                             Email = "alexandra@email.com",
                             NameFirst = "Alex",
                             NameLast = "Coates",
@@ -68,7 +64,6 @@ namespace ThAmCo.Events.Migrations
                         {
                             CustomerId = 2,
                             Address = "21 Some Street",
-                            Attendance = false,
                             Email = "David@email.com",
                             NameFirst = "David",
                             NameLast = "Hodson",
@@ -84,6 +79,12 @@ namespace ThAmCo.Events.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("EventDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EventTitle")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("EventType")
                         .HasColumnType("nvarchar(max)");
 
@@ -95,11 +96,15 @@ namespace ThAmCo.Events.Migrations
                         new
                         {
                             EventId = 1,
+                            EventDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventTitle = "Wedding",
                             EventType = "WED"
                         },
                         new
                         {
                             EventId = 2,
+                            EventDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventTitle = "Meeting",
                             EventType = "MET"
                         });
                 });
@@ -114,17 +119,22 @@ namespace ThAmCo.Events.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("EventClassEventId")
+                        .HasColumnType("int");
+
                     b.Property<int>("EventId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("eventClassEventId")
-                        .HasColumnType("int");
+                    b.Property<bool>("attended")
+                        .HasColumnType("bit");
 
                     b.HasKey("GuestBookingId");
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("eventClassEventId");
+                    b.HasIndex("EventClassEventId");
+
+                    b.HasIndex("EventId");
 
                     b.ToTable("GuestBookings");
 
@@ -133,13 +143,15 @@ namespace ThAmCo.Events.Migrations
                         {
                             GuestBookingId = 1,
                             CustomerId = 1,
-                            EventId = 1
+                            EventId = 1,
+                            attended = false
                         },
                         new
                         {
                             GuestBookingId = 2,
                             CustomerId = 2,
-                            EventId = 2
+                            EventId = 2,
+                            attended = false
                         });
                 });
 
@@ -207,20 +219,22 @@ namespace ThAmCo.Events.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("EventClassEventId")
+                        .HasColumnType("int");
+
                     b.Property<int>("EventId")
                         .HasColumnType("int");
 
                     b.Property<int>("StaffId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("eventClassEventId")
-                        .HasColumnType("int");
-
                     b.HasKey("StaffingId");
 
-                    b.HasIndex("StaffId");
+                    b.HasIndex("EventClassEventId");
 
-                    b.HasIndex("eventClassEventId");
+                    b.HasIndex("EventId");
+
+                    b.HasIndex("StaffId");
 
                     b.ToTable("Staffings");
 
@@ -241,28 +255,40 @@ namespace ThAmCo.Events.Migrations
 
             modelBuilder.Entity("ThAmCo.Events.Data.GuestBooking", b =>
                 {
-                    b.HasOne("ThAmCo.Events.Data.Customer", "customer")
-                        .WithMany()
+                    b.HasOne("ThAmCo.Events.Data.Customer", "Customer")
+                        .WithMany("Bookings")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ThAmCo.Events.Data.EventClass", null)
+                        .WithMany("Bookings")
+                        .HasForeignKey("EventClassEventId");
+
                     b.HasOne("ThAmCo.Events.Data.EventClass", "eventClass")
                         .WithMany()
-                        .HasForeignKey("eventClassEventId");
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ThAmCo.Events.Data.Staffing", b =>
                 {
-                    b.HasOne("ThAmCo.Events.Data.Staff", "staff")
-                        .WithMany()
-                        .HasForeignKey("StaffId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("ThAmCo.Events.Data.EventClass", null)
+                        .WithMany("Staffing")
+                        .HasForeignKey("EventClassEventId");
 
                     b.HasOne("ThAmCo.Events.Data.EventClass", "eventClass")
                         .WithMany()
-                        .HasForeignKey("eventClassEventId");
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ThAmCo.Events.Data.Staff", "staff")
+                        .WithMany("staffing")
+                        .HasForeignKey("StaffId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

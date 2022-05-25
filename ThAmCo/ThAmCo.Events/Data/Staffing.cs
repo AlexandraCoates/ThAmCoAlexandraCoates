@@ -10,11 +10,16 @@ namespace ThAmCo.Events.Data
     public class Staffing
     {
 
+        [Display(Name = "Id")]
         public int StaffingId { get; set; }
 
+
+        [Display(Name = "Staff Id")]
         [ForeignKey(nameof(StaffId))]
         public int StaffId { get; set; }
 
+
+        [Display(Name = "Event Id")]
         [ForeignKey(nameof(EventId))]
         public int EventId { get; set; }
 

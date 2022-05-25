@@ -48,14 +48,35 @@ namespace ThAmCo.Events.Data
             builder.Entity<EventClass>()
                 .HasKey(e => new { e.EventId });
 
+            builder.Entity<EventClass>()
+                .HasMany(e => e.Bookings);
+
+            builder.Entity<EventClass>()
+                .HasMany(e => e.Staffing);
+
             builder.Entity<GuestBooking>()
                 .HasKey(g => new { g.GuestBookingId });
+
+            builder.Entity<GuestBooking>()
+                .HasOne(g => g.eventClass)
+                .WithMany()
+                .HasForeignKey(g => g.EventId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Staff>()
                 .HasKey(s => new { s.StaffId});
 
+            builder.Entity<Staff>()
+                .HasMany(s => s.staffing);
+
             builder.Entity<Staffing>()
                 .HasKey(s => new { s.StaffingId });
+
+            builder.Entity<Staffing>()
+                .HasOne(s => s.eventClass)
+                .WithMany()
+                .HasForeignKey(s => s.EventId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Adding seed data to the tables //
 
@@ -69,8 +90,8 @@ namespace ThAmCo.Events.Data
 
                 builder.Entity<EventClass>()
                     .HasData(
-                    new EventClass { EventId = 1, EventType = "WED" },
-                    new EventClass { EventId = 2, EventType = "MET"}
+                    new EventClass { EventId = 1, EventType = "WED", EventTitle = "Wedding" },
+                    new EventClass { EventId = 2, EventType = "MET", EventTitle = "Meeting"}
                     );
 
                 builder.Entity<GuestBooking>()

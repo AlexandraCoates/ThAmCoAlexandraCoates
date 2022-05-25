@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="4.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.19">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,10 +21,6 @@
 
   <ItemGroup>
     <None Include="wwwroot\js\site.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Staffing\" />
   </ItemGroup>
 
 </Project>

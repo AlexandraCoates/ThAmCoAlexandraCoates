@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj": {}
+    "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj": {
+    "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
         "projectName": "ThAmCo.Venues",
-        "projectPath": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
+        "projectPath": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Venues\\ThAmCo.Venues.csproj",
         "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alexa\\Source\\Repos\\ThAmCoYr2\\ThAmCo\\ThAmCo.Venues\\obj\\",
+        "outputPath": "C:\\Users\\alexa\\Desktop\\ThAmCoAlex\\ThAmCo\\ThAmCo.Venues\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
